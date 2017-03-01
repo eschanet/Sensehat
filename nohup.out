@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "wunderground.py", line 191, in <module>
+    time.sleep(60*MINUTES_BETWEEN_READS)
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "wunderground.py", line 190, in <module>
+    streamer.flush()
+  File "/usr/local/lib/python2.7/dist-packages/ISStreamer/Streamer.py", line 251, in flush
+    self.ship_messages(messages)
+  File "/usr/local/lib/python2.7/dist-packages/ISStreamer/Streamer.py", line 232, in ship_messages
+    __ship(retries)
+  File "/usr/local/lib/python2.7/dist-packages/ISStreamer/Streamer.py", line 207, in __ship
+    response = conn.getresponse()
+  File "/usr/lib/python2.7/httplib.py", line 1111, in getresponse
+    response.begin()
+  File "/usr/lib/python2.7/httplib.py", line 444, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python2.7/httplib.py", line 400, in _read_status
+    line = self.fp.readline(_MAXLINE + 1)
+  File "/usr/lib/python2.7/socket.py", line 476, in readline
+    data = self._sock.recv(self._rbufsize)
+  File "/usr/lib/python2.7/ssl.py", line 714, in recv
+    return self.read(buflen)
+  File "/usr/lib/python2.7/ssl.py", line 608, in read
+    v = self._sslobj.read(len or 1024)
+KeyboardInterrupt

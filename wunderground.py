@@ -6,14 +6,14 @@ import time
 from ISStreamer.Streamer import Streamer
 
 # --------- User Settings ---------
-STATE = "CA"
-CITY = "San_Francisco"
-WUNDERGROUND_API_KEY = "PLACE YOUR WUNDERGROUND API KEY HERE"
+STATE = "Germany"
+CITY = "Munich"
+WUNDERGROUND_API_KEY = "e71507fc5fe0780c"
 BUCKET_NAME = ":partly_sunny: " + CITY + " Weather"
 BUCKET_KEY = "wu1"
-ACCESS_KEY = "PLACE YOUR INITIAL STATE ACCESS KEY HERE"
+ACCESS_KEY = "yHRoXJxikEPGyXluXc7muoagOCKhRGYo"
 MINUTES_BETWEEN_READS = 15
-METRIC_UNITS = False
+METRIC_UNITS = True
 # ---------------------------------
 
 def isFloat(string):
@@ -24,7 +24,7 @@ def isFloat(string):
         return False
 
 def get_conditions():
-	api_conditions_url = "http://api.wunderground.com/api/" + WUNDERGROUND_API_KEY + "/conditions/q/" + STATE + "/" + CITY + ".json"
+	api_conditions_url = "http://api.wunderground.com/api/" + WUNDERGROUND_API_KEY + "/geolookup/conditions/forecast/q/" + STATE + "/" + CITY + ".json"
 	try:
 		f = urllib2.urlopen(api_conditions_url)
 	except:
@@ -34,7 +34,7 @@ def get_conditions():
 	return json.loads(json_conditions)
 
 def get_astronomy():
-	api_astronomy_url = "http://api.wunderground.com/api/" + WUNDERGROUND_API_KEY + "/astronomy/q/" + STATE + "/" + CITY + ".json"
+	api_astronomy_url = "http://api.wunderground.com/api/" + WUNDERGROUND_API_KEY + "/geolookup/astronomy/forecast/q/" + STATE + "/" + CITY + ".json"
 	try:
 		f = urllib2.urlopen(api_astronomy_url)
 	except:
